@@ -15,7 +15,7 @@ def write_read(x):
     return data
 
 while True:
-    num = input("Enter a number: ") # Taking input from user
+    num = input("Enter a number: ") # Taking input from user1
     value = write_read(num)
     print(value) # printing the value
 
