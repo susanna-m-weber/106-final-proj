@@ -10,4 +10,4 @@ def write_read(x):
 while True:
     num = input("Enter a number: ") # Taking input from user
     value = write_read(num)
-    print(value) # printing the value
+    #print(value) # printing the value

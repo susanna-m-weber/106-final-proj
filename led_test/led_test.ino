@@ -1,4 +1,3 @@
-int x = 3;
 const int ledPin = 27;
 
 void setup() {
@@ -17,4 +16,5 @@ void loop() {
     digitalWrite(ledPin, LOW);
   }
 }
+
 
