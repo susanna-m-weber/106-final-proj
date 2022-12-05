@@ -8,10 +8,14 @@ def color_detect():
     print("Opening camera, please wait ~ 1 minute")
     cap = cv2.VideoCapture(0)
     print(f"Camera ready: {cap.isOpened()}")
-    
+
+    counter = 0
+    last = time.time()
+
     while True: 
 
         while cap.isOpened():
+            counter += 1
             _, imageFrame = cap.read()
             hsvFrame = cv2.cvtColor(imageFrame, cv2.COLOR_BGR2HSV)
             
@@ -76,6 +80,11 @@ def color_detect():
             #     #v2.putText(imageFrame, f"Distance: {dist_red2green}", (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0))
 
             cv2.imshow("Webcam", imageFrame)
+
+            if time.time() - last > 10:
+                print(counter)
+                last = time.time()
+                counter = 0
                         
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
