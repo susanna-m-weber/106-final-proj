@@ -4,10 +4,12 @@ from matplotlib import pyplot as plt
 import serial
 import time
 import serial
-from color_detect import *
+from color_detect_test import *
 
 if __name__ == "__main__":
     main()
+
+arduino = serial.Serial(port='COM4', baudrate=115200, timeout=.1) # change port as needed
 
 
 def main():
@@ -25,11 +27,12 @@ def main():
             (x_coeff1, x_coeff0) = regress(time, ballx)
 
 
-
             currGoalie = pos_vals[0][4]
             desiredGoalie = 0
-            #send currGoalie and desiredGoalie to ESP32
-
+            
+            goalie_data = bytearray([currGoalie, desiredGoalie])
+            arduino.write(goalie_data)
+            time.sleep(0.05)
 
     except KeyboardInterrupt:
         pass
