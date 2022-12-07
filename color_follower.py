@@ -9,6 +9,8 @@ cap = cv2.VideoCapture(0)
 print(f"Camera ready: {cap.isOpened()}")
 
 x_ball, y_ball, x_goalie, y_goalie = 0, 0, 0, 0
+HIGH_LIMIT = 166
+LOW_LIMIT = 75
 
 arduino = serial.Serial(port='COM4', baudrate=115200, timeout=.1)
 
@@ -65,18 +67,15 @@ while cap.isOpened():
         y_goalie = (y_b_max + h_b_max) / 2
     
     if (y_ball and y_goalie):
-        if (y_ball - y_goalie > 1):
-            D = 250
-            dir = 1
+        if (y_ball - y_goalie > 1) and (y_goalie < HIGH_LIMIT):
             arduino.write(bytes("1", 'utf-8'))
-        elif (y_ball - y_goalie < -1):
-            D = 250
-            dir = 2
+            print('go negative')
+        elif (y_ball - y_goalie < -1) and (y_goalie > LOW_LIMIT):
             arduino.write(bytes("2", 'utf-8'))
+            print('go positive')
         else:
-            D = 0
-            dir = 0
             arduino.write(bytes("0", 'utf-8'))
+            print('dont move oyu bitch')
 
     # if not contours_r and not contours_g: 
     #     arduino.write(bytes("2", 'utf-8'))
