@@ -150,20 +150,17 @@ while cap.isOpened():
     currGoalieY = y_goalie[-1]
     desiredGoalieY = m_xy*x_goalie[-1] + b_xy
 
-    if math.isnan(desiredGoalieY) or m_xt > -5:    # maybe add      or (abs(m_xy) > 5) to not freak out when its bouncing a lot
+    if math.isnan(desiredGoalieY) or m_xt > 0:    # maybe add      or (abs(m_xy) > 5) to not freak out when its bouncing a lot
         desiredGoalieY = y_ball[-1]
                 
     desiredGoalieY = max(min(desiredGoalieY, HIGH_LIMIT), LOW_LIMIT)
 
     if currGoalieY - desiredGoalieY > 1:
         arduino.write(bytes("2", 'utf-8'))
-        print('go negative')
     elif currGoalieY - desiredGoalieY < -1:
         arduino.write(bytes("1", 'utf-8'))
-        print('go positive')
     else:
         arduino.write(bytes("0", 'utf-8'))
-        print('dont move oyu bitch')
 
 
 
