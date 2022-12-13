@@ -1,5 +1,7 @@
 # Fuusball Bot: EE C106A Group 3 Final Project
 
+![A gif demonstrating gameplay](imgs/example.gif)
+
 
 ### To run the code used at the prjoect showcase: 
  - Upload demo_arduino.ino to ESP
