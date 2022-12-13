@@ -1,5 +1,11 @@
 # 106-final-proj
 EE C106A Group 3 Final Project
+### Demo Files
+- Arduino: led_baby 
+- Python: regress.py
+#### Demo Notes to Self: 
+- 5 jenga block stack 
+- make sure green ball is visible at star
 
 ### To blink LED based on color detection 
  - Upload color_dection_actuation.ino to ESP 
