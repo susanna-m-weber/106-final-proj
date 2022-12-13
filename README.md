@@ -1,4 +1,4 @@
-# Fuusball Bot: EE C106A Group 3 Final Project
+# Foosball Bot: EE C106A Group 3 Final Project
 
 <p align="center">
   <img src="imgs/example.gif" />
