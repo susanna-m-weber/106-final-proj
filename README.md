@@ -1,12 +1,11 @@
-# 106-final-proj
-EE C106A Group 3 Final Project
-### Demo Files
-- Arduino: led_baby 
-- Python: regress.py
-#### Demo Notes to Self: 
-- 5 jenga block stack 
-- make sure green ball is visible at star
+# Fuusball Bot: EE C106A Group 3 Final Project
 
+
+### To run the code used at the prjoect showcase: 
+ - Upload demo_arduino.ino to ESP
+ - Run demo.py 
+ - A pop-up window showing the color detection should appear, and the goalie should be able to respond to the ball's movement
+ 
 ### To blink LED based on color detection 
  - Upload color_dection_actuation.ino to ESP 
  - Run color_detection_actuation.py 
@@ -21,5 +20,4 @@ EE C106A Group 3 Final Project
   - Upload led_test.ino to ESP32 
   - Run led_test.py 
   - LED should turn on when user enters 1, and off when user enters 0 
-### To test color detection CV code:
-  - Run color_detect_test.py or color_decection.ipynb
+
