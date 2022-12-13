@@ -4,6 +4,8 @@
   <img src="imgs/example.gif" />
 </p>
 
+See the final project presentation slides ("Project Showcase Presentation.pptx") for details!
+
 
 ### To run the code used at the prjoect showcase: 
  - Upload demo_arduino.ino to ESP
