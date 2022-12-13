@@ -1,6 +1,8 @@
 # Fuusball Bot: EE C106A Group 3 Final Project
 
-![A gif demonstrating gameplay](imgs/example.gif)
+<p align="center">
+  <img src="imgs/example.gif" />
+</p>
 
 
 ### To run the code used at the prjoect showcase: 
