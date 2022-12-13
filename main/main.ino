@@ -11,8 +11,9 @@ void loop() {
     // Wait for data at the port
     while (!Serial.available());
     goalie_data[i] = float((Serial.read()));
-    // delay(100);
-    // Serial.write(byte(goalie_data[i]));
+    delay(100);
+    Serial.write(byte(goalie_data[i]));
     Serial.flush(); 
   }
 }
+ 

@@ -36,8 +36,8 @@ print(f"Camera ready: {cap.isOpened()}")
 
 start = time.time()
 
-HIGH_LIMIT = 168.5
-LOW_LIMIT = 80.5
+HIGH_LIMIT = 170
+LOW_LIMIT = 80
 
 x_ball = [0]
 y_ball = [(HIGH_LIMIT-LOW_LIMIT)/2]

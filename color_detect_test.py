@@ -33,8 +33,8 @@ def color_detect():
             
             # red_mask = red_mask_0 + red_mask_1
             
-            green_lower = np.array([60, 100, 50], np.uint8)
-            green_upper = np.array([80, 255, 255], np.uint8)
+            green_lower = np.array([30, 100, 50], np.uint8) #np.array([60, 100, 50], np.uint8)
+            green_upper = np.array([80, 255, 255], np.uint8) #np.array([80, 255, 255], np.uint8)
             green_mask = cv2.inRange(hsvFrame, green_lower, green_upper)
 
             kernal = np.ones((5, 5), "uint8")

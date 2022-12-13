@@ -126,14 +126,23 @@ def main():
                         
             desiredGoalieY = max(min(desiredGoalieY, HIGH_LIMIT), LOW_LIMIT)
 
-            print("I am one pair of vals")
-            print("Computer dist between desired and curr:", abs(currGoalieY - desiredGoalieY))
-            goalie_data = bytearray([int(currGoalieY), int(desiredGoalieY)])
-            arduino.write(goalie_data)
-            #ball_data =  bytearray([int(x_ball[-1]), int(y_ball[-1])])
-            #arduino.write(ball_data)
-            #print(f"Computer ball position: {x_ball[-1]}, {y_ball[-1]}")
-            print("Arduino  dist between desired and curr:")
+            if currGoalieY - desiredGoalieY > 1:
+                D = int(currGoalieY - desiredGoalieY) #250
+            elif currGoalieY - desiredGoalieY < -1:
+                D = 0
+            else:
+                D = 0
+
+            arduino.write(bytearray([D]))
+
+            # print("I am one pair of vals")
+            # print("Computer dist between desired and curr:", abs(currGoalieY - desiredGoalieY))
+            # goalie_data = bytearray([int(currGoalieY), int(desiredGoalieY)])
+            # arduino.write(goalie_data)
+            # #ball_data =  bytearray([int(x_ball[-1]), int(y_ball[-1])])
+            # #arduino.write(ball_data)
+            # #print(f"Computer ball position: {x_ball[-1]}, {y_ball[-1]}")
+            # print("Arduino  dist between desired and curr:")
             try:
                 # print(f'Characters in ser buffer = {arduino.in_waiting}')
                 for i in range(arduino.in_waiting):

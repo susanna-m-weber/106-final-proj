@@ -16,7 +16,7 @@ void loop() {
       for (int i = 0; i < 2; i++) {
         goalie_data[i] = float((Serial.read()));
       }
-      Serial.write(byte(abs(goalie_data[1] - goalie_data[0])));
+      //Serial.write(byte(abs(goalie_data[1] - goalie_data[0])));
       Serial.flush();
       if (abs(goalie_data[1] - goalie_data[0]) < 20) {
         digitalWrite(ledPin, HIGH);
